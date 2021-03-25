@@ -1,17 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <div class="container">
+    <el-row>
+      <el-col :span="12">
+        <h3>super</h3>
+        <el-menu>
+          <el-menu-item index="1">
+            <i class="el-icon-menu"></i>
+            <template #title>首页</template>
+          </el-menu-item>
+        </el-menu>
+      </el-col>
+    </el-row>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
 
 export default defineComponent({
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: {}
 })
 </script>
 
