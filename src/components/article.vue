@@ -1,0 +1,63 @@
+<template>
+  <div class="article-list">
+    <el-table
+        :data="articleList"
+        style="width: 100%">
+      <el-table-column
+          prop="title"
+          label="文章标题"
+      >
+      </el-table-column>
+      <el-table-column
+       prop="date"
+       label="发布时间"
+       ></el-table-column>
+      <el-table-column
+       prop="author"
+       label="发布人"
+       ></el-table-column>
+      <el-table-column
+          label="操作"
+          ></el-table-column>
+    </el-table>
+    <el-pagination
+        background
+        layout="prev, pager, next"
+        :total="50">
+    </el-pagination>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: "article",
+    data() {
+      return {
+        articleList: [{
+          title: 'Canvas 最佳实践（性能篇）',
+          date: '2021-03-12',
+          author: 'huangxing'
+        },{
+          title: 'Canvas 最佳实践（性能篇）',
+          date: '2021-03-12',
+          author: 'huangxing'
+        },{
+          title: 'Canvas 最佳实践（性能篇）',
+          date: '2021-03-12',
+          author: 'huangxing'
+        }]
+      }
+    }
+  }
+</script>
+
+<style lang="scss" type="text/scss" scoped>
+.article-list{
+  padding: 20px 0;
+  background: #fff;
+  .el-pagination{
+    text-align: right;
+    margin-top: 20px;
+  }
+}
+</style>
