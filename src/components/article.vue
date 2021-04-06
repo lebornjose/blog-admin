@@ -18,7 +18,12 @@
        ></el-table-column>
       <el-table-column
           label="操作"
-          ></el-table-column>
+          >
+        <template #default="scope">
+          <el-button type="text" size="small">查看</el-button>
+          <el-button type="text" size="small">编辑</el-button>
+        </template>
+      </el-table-column>
     </el-table>
     <el-pagination
         background
@@ -45,7 +50,12 @@
           title: 'Canvas 最佳实践（性能篇）',
           date: '2021-03-12',
           author: 'huangxing'
-        }]
+        },{
+            title: 'Canvas 最佳实践（性能篇）',
+            date: '2021-03-12',
+            author: 'huangxing'
+          }
+        ]
       }
     }
   }
