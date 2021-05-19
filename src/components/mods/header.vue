@@ -87,6 +87,7 @@
       }
       .next-name{
         margin-left: 10px;
+        line-height: 28px;
       }
     }
   }

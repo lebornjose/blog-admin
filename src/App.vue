@@ -9,6 +9,7 @@
         <article-container></article-container>
       </el-col>
     </el-row>
+    {{visible}}
   </div>
 </template>
 
@@ -20,9 +21,10 @@ import articleContainer from './components/article.vue';
 
 export default defineComponent({
   name: 'App',
-  data() {
+  setup() {
+    const visible:boolean = false;
     return {
-      visible: false
+      visible
     }
   },
   components: {
@@ -40,19 +42,34 @@ export default defineComponent({
 }
 html,body{
   height: 100%;
+  font-size: 12px;
 }
+
 #app, .container{
   height: 100%;
+  .curmbs{
+    position: absolute;
+    width: 87.5%;
+    top: 53px;
+    background: #fff;
+    left: 12.4%;
+    height: 40px;
+    line-height: 40px;
+    z-index: 9;
+  }
 }
 .main-content{
   height: calc(100% - 60px);
+  .el-menu{
+    height: 100%;
+  }
 }
 ul li, ol li{
   list-style: none;
 }
 .right-content{
   padding: 20px;
-  background: #eee;
+  background: #fff;
   height: 100%;
 }
 </style>

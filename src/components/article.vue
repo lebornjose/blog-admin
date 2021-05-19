@@ -33,38 +33,43 @@
   </div>
 </template>
 
-<script>
-  export default {
-    name: "article",
-    data() {
+<script lang="ts">
+  import { defineComponent } from 'vue'
+  export default defineComponent({
+    name: 'article',
+    setup() {
+      const articleList:Array<any> = [{
+        title: 'Canvas 最佳实践（性能篇）',
+        date: '2021-03-12',
+        author: 'huangxing'
+      },{
+        title: 'Canvas 最佳实践（性能篇）',
+        date: '2021-03-12',
+        author: 'huangxing'
+      },{
+        title: 'Canvas 最佳实践（性能篇）',
+        date: '2021-03-12',
+        author: 'huangxing'
+      },{
+        title: 'Canvas 最佳实践（性能篇）',
+        date: '2021-03-12',
+        author: 'huangxing'
+      }];
       return {
-        articleList: [{
-          title: 'Canvas 最佳实践（性能篇）',
-          date: '2021-03-12',
-          author: 'huangxing'
-        },{
-          title: 'Canvas 最佳实践（性能篇）',
-          date: '2021-03-12',
-          author: 'huangxing'
-        },{
-          title: 'Canvas 最佳实践（性能篇）',
-          date: '2021-03-12',
-          author: 'huangxing'
-        },{
-            title: 'Canvas 最佳实践（性能篇）',
-            date: '2021-03-12',
-            author: 'huangxing'
-          }
-        ]
+        articleList
       }
     }
-  }
+  })
 </script>
 
 <style lang="scss" type="text/scss" scoped>
 .article-list{
   padding: 20px 0;
   background: #fff;
+  border-radius: 4px;
+  .el-table{
+    font-size: 12px;
+  }
   .el-pagination{
     text-align: right;
     margin-top: 20px;
