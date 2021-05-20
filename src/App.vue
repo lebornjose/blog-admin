@@ -6,7 +6,8 @@
         <left-bar></left-bar>
       </el-col>
       <el-col :span="21" class="right-content">
-        <article-container></article-container>
+<!--        <article-container></article-container>-->
+        <router-view></router-view>
       </el-col>
     </el-row>
     {{visible}}
