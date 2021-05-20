@@ -1,5 +1,5 @@
 <template>
-  <el-menu class="left-bar">
+  <el-menu class="left-bar" :router="true">
     <el-menu-item index="1">
       <i class="el-icon-menu"></i>
       <template #title>首页</template>
@@ -10,8 +10,8 @@
         <span>文章管理</span>
       </template>
       <el-menu-item-group>
-        <el-menu-item index="2-1">文章列表</el-menu-item>
-        <el-menu-item index="2-2">文章分类</el-menu-item>
+        <el-menu-item :route="{path: '/article'}" index="2-1">文章列表</el-menu-item>
+        <el-menu-item :route="{path: '/category'}" index="2-2">文章分类</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
     <el-submenu index="3">

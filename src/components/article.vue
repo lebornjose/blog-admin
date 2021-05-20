@@ -2,6 +2,7 @@
   <div class="article-list">
     <el-table
         :data="articleList"
+        :border="true"
         style="width: 100%">
       <el-table-column
           prop="title"
@@ -34,7 +35,7 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent } from 'vue'
+  import { defineComponent } from 'vue';
   export default defineComponent({
     name: 'article',
     setup() {
