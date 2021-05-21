@@ -10,7 +10,7 @@
       >
       </el-table-column>
       <el-table-column
-       prop="date"
+       prop="pubtime"
        label="发布时间"
        ></el-table-column>
       <el-table-column
@@ -29,37 +29,31 @@
     <el-pagination
         background
         layout="prev, pager, next"
-        :total="50">
+        :total="total">
     </el-pagination>
   </div>
 </template>
 
 <script lang="ts">
-  import { defineComponent } from 'vue';
+  import { defineComponent, onMounted, ref} from 'vue';
+  import utils from '../utils/index';
   export default defineComponent({
     name: 'article',
     setup() {
-      const articleList:Array<any> = [{
-        title: 'Canvas 最佳实践（性能篇）',
-        date: '2021-03-12',
-        author: 'huangxing'
-      },{
-        title: 'Canvas 最佳实践（性能篇）',
-        date: '2021-03-12',
-        author: 'huangxing'
-      },{
-        title: 'Canvas 最佳实践（性能篇）',
-        date: '2021-03-12',
-        author: 'huangxing'
-      },{
-        title: 'Canvas 最佳实践（性能篇）',
-        date: '2021-03-12',
-        author: 'huangxing'
-      }];
+      let articleList = ref([]);
+      let total = ref(0);
+      onMounted(() => {
+        utils.get('/api/article/list/1').then((res: any) => {
+          total.value = res.total;
+          articleList.value = res.data;
+          console.log(articleList)
+        })
+      });
       return {
-        articleList
+        articleList,
+        total
       }
-    }
+    },
   })
 </script>
 

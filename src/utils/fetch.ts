@@ -36,4 +36,4 @@ const handleResponse = (url: RequestInfo, response: Response) => {
     return {error: {message: 'Request failed due to server error '}};
   }
 };
-export {get, post};
+export { get, post };
