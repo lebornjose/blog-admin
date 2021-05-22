@@ -10,7 +10,6 @@
         <router-view></router-view>
       </el-col>
     </el-row>
-    {{visible}}
   </div>
 </template>
 

@@ -2,6 +2,7 @@
   <div class="category-list">
     <el-table
       :data="categoryList"
+      :border="true"
       style="width: 100%">
       <el-table-column
         prop="title"
@@ -19,11 +20,17 @@
   </div>
 </template>
 <script class="ts">
-  import { defineComponent } from 'vue';
+  import { defineComponent, ref, onMounted} from 'vue';
+  import utils from '../utils/index';
   export default defineComponent({
     name: 'category',
     setup() {
-      const categoryList = [{title: '1'}];
+      const categoryList = ref([]);
+      onMounted(() => {
+        utils.get('/api/category/list').then((res) => {
+          categoryList.value = res.data;
+        })
+      });
       return { categoryList }
     }
   });
