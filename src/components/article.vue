@@ -7,16 +7,24 @@
       <el-table-column
           prop="title"
           label="文章标题"
+          width="420"
       >
       </el-table-column>
       <el-table-column
-       prop="pubtime"
        label="发布时间"
-       ></el-table-column>
+       >
+        <template #default="scope">
+          {{ timeReplace(scope.row.pubtime)}}
+        </template>
+      </el-table-column>
       <el-table-column
        prop="author"
        label="发布人"
        ></el-table-column>
+      <el-table-column
+        prop="reads"
+        label="阅读量"
+      ></el-table-column>
       <el-table-column
           label="操作"
           >
@@ -37,11 +45,15 @@
 <script lang="ts">
   import { defineComponent, onMounted, ref} from 'vue';
   import utils from '../utils/index';
+  import moment from 'moment';
   export default defineComponent({
     name: 'article',
     setup() {
       let articleList = ref([]);
       let total = ref(0);
+      const timeReplace = (val:number) => {
+        return moment(val * 1000).format('YYYY-MM-DD');
+      };
       onMounted(() => {
         utils.get('/api/article/list/1').then((res: any) => {
           total.value = res.total;
@@ -51,7 +63,8 @@
       });
       return {
         articleList,
-        total
+        total,
+        timeReplace
       }
     },
   })
