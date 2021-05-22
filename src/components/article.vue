@@ -57,17 +57,3 @@
   })
 </script>
 
-<style lang="scss" type="text/scss" scoped>
-.article-list{
-  padding: 20px 0;
-  background: #fff;
-  border-radius: 4px;
-  .el-table{
-    font-size: 12px;
-  }
-  .el-pagination{
-    text-align: right;
-    margin-top: 20px;
-  }
-}
-</style>

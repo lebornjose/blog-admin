@@ -36,40 +36,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-*{
-  margin: 0;
-  padding: 0;
-}
-html,body{
-  height: 100%;
-  font-size: 12px;
-}
-
-#app, .container{
-  height: 100%;
-  .curmbs{
-    position: absolute;
-    width: 87.5%;
-    top: 53px;
-    background: #fff;
-    left: 12.4%;
-    height: 40px;
-    line-height: 40px;
-    z-index: 9;
-  }
-}
-.main-content{
-  height: calc(100% - 60px);
-  .el-menu{
-    height: 100%;
-  }
-}
-ul li, ol li{
-  list-style: none;
-}
-.right-content{
-  padding: 20px;
-  background: #fff;
-  height: 100%;
-}
+  @import "./assets/scss/all.scss";
 </style>
