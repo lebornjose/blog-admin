@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Aritcle from '../components/article.vue';
+import Article from '../components/article.vue';
 import Category from '../components/category.vue';
+import Product from '../components/produce.vue';
 const routerHistory = createWebHistory();
 
 const router = createRouter({
@@ -13,12 +14,17 @@ const router = createRouter({
     {
       path: '/article',
       name: 'article',
-      component: Aritcle
+      component: Article,
     },
     {
       path: '/category',
       name: 'category',
-      component: Category
+      component: Category,
+    },
+    {
+      path: '/product',
+      name: 'product',
+      component: Product,
     }
   ]
 });
