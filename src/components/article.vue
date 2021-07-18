@@ -29,7 +29,9 @@
           label="操作"
           >
         <template #default="scope">
-          <el-button type="text" size="small">查看</el-button>
+          <el-button type="text" size="small"
+            @click="getData"
+          >查看</el-button>
           <el-button type="text" size="small">编辑</el-button>
         </template>
       </el-table-column>
@@ -37,34 +39,41 @@
     <el-pagination
         background
         layout="prev, pager, next"
+        @current-change="getData"
         :total="total">
     </el-pagination>
   </div>
 </template>
 
 <script lang="ts">
-  import { defineComponent, onMounted, ref} from 'vue';
+  import { defineComponent, onMounted, reactive, toRefs} from 'vue';
   import utils from '../utils/index';
   import moment from 'moment';
   export default defineComponent({
     name: 'article',
     setup() {
-      let articleList = ref([]);
-      let total = ref(0);
+      const state = reactive({
+        articleList: [], // 文章
+        total: 0,
+        page: 1,
+      });
+
       const timeReplace = (val:number) => {
         return moment(val * 1000).format('YYYY-MM-DD');
       };
       onMounted(() => {
-        utils.get('/api/article/list/1').then((res: any) => {
-          total.value = res.total;
-          articleList.value = res.data;
-          console.log(articleList)
-        })
+        getData(state.page);
       });
+      const getData = (page: number) => {
+        utils.get('/api/article/list/' + page).then((res: any) => {
+          state.total = res.total;
+          state.articleList = res.data;
+        })
+      };
       return {
-        articleList,
-        total,
-        timeReplace
+        ...toRefs(state),
+        timeReplace,
+        getData,
       }
     },
   })

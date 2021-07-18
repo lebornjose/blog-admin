@@ -20,9 +20,9 @@
         <span>功能管理</span>
       </template>
       <el-menu-item-group>
-        <el-menu-item index="3-1">友情链接</el-menu-item>
-        <el-menu-item index="3-2">应用推荐</el-menu-item>
-        <el-menu-item index="3-3">评理管理</el-menu-item>
+<!--        <el-menu-item index="3-1">友情链接</el-menu-item>-->
+        <el-menu-item :route="{path: '/product'}" index="3-2">应用推荐</el-menu-item>
+<!--        <el-menu-item index="3-3">评理管理</el-menu-item>-->
       </el-menu-item-group>
     </el-submenu>
   </el-menu>

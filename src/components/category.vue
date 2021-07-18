@@ -17,6 +17,11 @@
         </template>
       </el-table-column>
     </el-table>
+    <el-pagination
+      background
+      layout="total, prev, pager, next"
+      :total="total">
+    </el-pagination>
   </div>
 </template>
 <script class="ts">
@@ -26,9 +31,11 @@
     name: 'category',
     setup() {
       const categoryList = ref([]);
+      const total = ref(0);
       onMounted(() => {
         utils.get('/api/category/list').then((res) => {
           categoryList.value = res.data;
+          total.value = res.data.length;
         })
       });
       return { categoryList }
