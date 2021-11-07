@@ -1,0 +1,30 @@
+#app, .container{
+  .curmbs{
+    position: absolute;
+    width: 87.5%;
+    top: 53px;
+    background: #fff;
+    left: 12.4%;
+    height: 40px;
+    line-height: 40px;
+    z-index: 9;
+  }
+}
+.main-content{
+  min-height: calc(100vh - 60px);
+  margin-top: -1px;
+  background: #f0f0f0;
+  .el-menu{
+    height: 100%;
+  }
+}
+.right-content{
+  padding: 20px;
+  // background: #f0f0f0;
+  height: calc(100vh - 60px);
+  overflow: auto;
+}
+
+.el-pagination .btn-prev .el-icon, .el-pagination .btn-next .el-icon {
+  width: inherit;
+}

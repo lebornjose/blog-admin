@@ -1,0 +1,13 @@
+.article-list,.product-list,.category-list{
+  padding: 16px;
+  background: #fff;
+  border-radius: 4px;
+  //display: inline-block;
+  .el-table{
+    font-size: 12px;
+  }
+  .el-pagination{
+    text-align: right;
+    margin-top: 20px;
+  }
+}
